@@ -6,7 +6,7 @@ mkdocs build --clean
 
 
 # Checkout gh-pages
-git clone --branch gh-pages git@github.com:jfdesrochers/itdocs.git gh-pages
+git clone --branch gh-pages https://jfdesrochers:$GH_KEY@github.com/jfdesrochers/itdocs gh-pages
 
 #sync site
 rsync -av site/ gh-pages/
