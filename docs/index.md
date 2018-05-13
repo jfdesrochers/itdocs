@@ -4,4 +4,4 @@ Welcome to IT Docs by Jean-Francois Desrochers! You will find everything I've le
 
 ## Linux Sys Admin
 
-[Creating SSH keys and aliases](/creatingsshkeys.md)
+[Creating SSH keys and aliases](/LinuxSysAdmin/creatingsshkeys.md)
