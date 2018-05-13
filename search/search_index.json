@@ -17,8 +17,28 @@
         }, 
         {
             "location": "/LinuxSysAdmin/creatingsshkeys/", 
+            "text": "Creating and setting up a SSH key\n\n\n1 - Create a RSA key pair\n\n\nRun the following command to generate a key pair on your machine:\n\n\nssh-keygen\n\n\n\n\n\n\n\nNote\n\n\nYou can optionally use the command \nssh-keygen -b 4096\n to use a higher security key.\n\n\n\n\nYou will be prompted for a location. You can use the default location (just press \nenter\n) or specify your own.\n\n\n\n\nWarning\n\n\nMake sure you don't overwrite any existing file, because you may break an existing connection if you do.\n\n\n\n\nYou will then be prompted to enter a passphrase. This step is optional, but recommended, especially if you share your machine with other people. If you specify a passphrase, you will be prompted for it every time you use the key to login using SSH.\n\n\nYou should then have two files at your specified location: \nid_rsa\n, which is your \nprivate\n key (do NOT share with anyone) and \nid_rsa.pub\n, which is your \npublic\n key (that you will put on your server).\n\n\n2 - Copying your key to the server\n\n\nNow you need to copy your new key to your server. You will need either a password-based SSH account or physical access to the machine for this step. Here are two ways of doing this :\n\n\nUsing `ssh-copy-id``\n\n\nIf you have \nssh-copy-id\n available on your system this step is easy, just run the following command :\n\n\nssh-copy-id yourusername@yourserver\n\n\n\n\n\nyourusername\n should be a password-based SSH account on your server.", 
+            "title": "Creating and setting up a SSH key"
+        }, 
+        {
+            "location": "/LinuxSysAdmin/creatingsshkeys/#creating-and-setting-up-a-ssh-key", 
             "text": "", 
-            "title": "Creatingsshkeys"
+            "title": "Creating and setting up a SSH key"
+        }, 
+        {
+            "location": "/LinuxSysAdmin/creatingsshkeys/#1-create-a-rsa-key-pair", 
+            "text": "Run the following command to generate a key pair on your machine:  ssh-keygen   Note  You can optionally use the command  ssh-keygen -b 4096  to use a higher security key.   You will be prompted for a location. You can use the default location (just press  enter ) or specify your own.   Warning  Make sure you don't overwrite any existing file, because you may break an existing connection if you do.   You will then be prompted to enter a passphrase. This step is optional, but recommended, especially if you share your machine with other people. If you specify a passphrase, you will be prompted for it every time you use the key to login using SSH.  You should then have two files at your specified location:  id_rsa , which is your  private  key (do NOT share with anyone) and  id_rsa.pub , which is your  public  key (that you will put on your server).", 
+            "title": "1 - Create a RSA key pair"
+        }, 
+        {
+            "location": "/LinuxSysAdmin/creatingsshkeys/#2-copying-your-key-to-the-server", 
+            "text": "Now you need to copy your new key to your server. You will need either a password-based SSH account or physical access to the machine for this step. Here are two ways of doing this :", 
+            "title": "2 - Copying your key to the server"
+        }, 
+        {
+            "location": "/LinuxSysAdmin/creatingsshkeys/#using-ssh-copy-id", 
+            "text": "If you have  ssh-copy-id  available on your system this step is easy, just run the following command :  ssh-copy-id yourusername@yourserver  yourusername  should be a password-based SSH account on your server.", 
+            "title": "Using `ssh-copy-id``"
         }
     ]
 }

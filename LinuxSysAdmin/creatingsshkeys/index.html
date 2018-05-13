@@ -42,7 +42,7 @@
     
     
       
-        <title>Creatingsshkeys - IT Docs</title>
+        <title>Creating and setting up a SSH key - IT Docs</title>
       
     
     
@@ -76,6 +76,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
+      <a href="#creating-and-setting-up-a-ssh-key" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -98,7 +102,7 @@
                 IT Docs
               </span>
               <span class="md-header-nav__topic">
-                Creatingsshkeys
+                Creating and setting up a SSH key
               </span>
             
           
@@ -207,10 +211,61 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
     
+      
     
-    <a href="./" title="Creatingsshkeys" class="md-nav__link md-nav__link--active">
-      Creatingsshkeys
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        Creating and setting up a SSH key
+      </label>
+    
+    <a href="./" title="Creating and setting up a SSH key" class="md-nav__link md-nav__link--active">
+      Creating and setting up a SSH key
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-create-a-rsa-key-pair" title="1 - Create a RSA key pair" class="md-nav__link">
+    1 - Create a RSA key pair
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-copying-your-key-to-the-server" title="2 - Copying your key to the server" class="md-nav__link">
+    2 - Copying your key to the server
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-ssh-copy-id" title="Using `ssh-copy-id``" class="md-nav__link">
+    Using `ssh-copy-id``
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -227,15 +282,90 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-create-a-rsa-key-pair" title="1 - Create a RSA key pair" class="md-nav__link">
+    1 - Create a RSA key pair
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-copying-your-key-to-the-server" title="2 - Copying your key to the server" class="md-nav__link">
+    2 - Copying your key to the server
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-ssh-copy-id" title="Using `ssh-copy-id``" class="md-nav__link">
+    Using `ssh-copy-id``
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>Creatingsshkeys</h1>
-                
-                
+                <h1 id="creating-and-setting-up-a-ssh-key">Creating and setting up a SSH key<a class="headerlink" href="#creating-and-setting-up-a-ssh-key" title="Permanent link">&para;</a></h1>
+<h2 id="1-create-a-rsa-key-pair">1 - Create a RSA key pair<a class="headerlink" href="#1-create-a-rsa-key-pair" title="Permanent link">&para;</a></h2>
+<p>Run the following command to generate a key pair on your machine:</p>
+<div class="codehilite"><pre><span></span>ssh-keygen
+</pre></div>
+
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You can optionally use the command <code>ssh-keygen -b 4096</code> to use a higher security key.</p>
+</div>
+<p>You will be prompted for a location. You can use the default location (just press <code>enter</code>) or specify your own.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Make sure you don't overwrite any existing file, because you may break an existing connection if you do.</p>
+</div>
+<p>You will then be prompted to enter a passphrase. This step is optional, but recommended, especially if you share your machine with other people. If you specify a passphrase, you will be prompted for it every time you use the key to login using SSH.</p>
+<p>You should then have two files at your specified location: <code>id_rsa</code>, which is your <strong>private</strong> key (do NOT share with anyone) and <code>id_rsa.pub</code>, which is your <strong>public</strong> key (that you will put on your server).</p>
+<h2 id="2-copying-your-key-to-the-server">2 - Copying your key to the server<a class="headerlink" href="#2-copying-your-key-to-the-server" title="Permanent link">&para;</a></h2>
+<p>Now you need to copy your new key to your server. You will need either a password-based SSH account or physical access to the machine for this step. Here are two ways of doing this :</p>
+<h3 id="using-ssh-copy-id">Using `ssh-copy-id``<a class="headerlink" href="#using-ssh-copy-id" title="Permanent link">&para;</a></h3>
+<p>If you have <code>ssh-copy-id</code> available on your system this step is easy, just run the following command :</p>
+<div class="codehilite"><pre><span></span>ssh-copy-id yourusername@yourserver
+</pre></div>
+
+
+<p><code>yourusername</code> should be a password-based SSH account on your server.</p>
                 
                   
                 
