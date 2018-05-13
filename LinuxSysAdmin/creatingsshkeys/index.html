@@ -248,14 +248,42 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#using-ssh-copy-id" title="Using `ssh-copy-id``" class="md-nav__link">
-    Using `ssh-copy-id``
+  <a href="#using-ssh-copy-id" title="Using ssh-copy-id" class="md-nav__link">
+    Using ssh-copy-id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copying-the-key-manually" title="Copying the key manually" class="md-nav__link">
+    Copying the key manually
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-testing-the-password-less-authentication" title="3 - Testing the password-less authentication" class="md-nav__link">
+    3 - Testing the password-less authentication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-disabling-password-based-authentication" title="4 - Disabling password-based authentication" class="md-nav__link">
+    4 - Disabling password-based authentication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-creating-an-alias-to-accelerate-the-connection" title="5 - Creating an alias to accelerate the connection" class="md-nav__link">
+    5 - Creating an alias to accelerate the connection
+  </a>
   
 </li>
       
@@ -311,14 +339,42 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#using-ssh-copy-id" title="Using `ssh-copy-id``" class="md-nav__link">
-    Using `ssh-copy-id``
+  <a href="#using-ssh-copy-id" title="Using ssh-copy-id" class="md-nav__link">
+    Using ssh-copy-id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#copying-the-key-manually" title="Copying the key manually" class="md-nav__link">
+    Copying the key manually
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-testing-the-password-less-authentication" title="3 - Testing the password-less authentication" class="md-nav__link">
+    3 - Testing the password-less authentication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-disabling-password-based-authentication" title="4 - Disabling password-based authentication" class="md-nav__link">
+    4 - Disabling password-based authentication
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-creating-an-alias-to-accelerate-the-connection" title="5 - Creating an alias to accelerate the connection" class="md-nav__link">
+    5 - Creating an alias to accelerate the connection
+  </a>
   
 </li>
       
@@ -358,14 +414,82 @@
 <p>You will then be prompted to enter a passphrase. This step is optional, but recommended, especially if you share your machine with other people. If you specify a passphrase, you will be prompted for it every time you use the key to login using SSH.</p>
 <p>You should then have two files at your specified location: <code>id_rsa</code>, which is your <strong>private</strong> key (do NOT share with anyone) and <code>id_rsa.pub</code>, which is your <strong>public</strong> key (that you will put on your server).</p>
 <h2 id="2-copying-your-key-to-the-server">2 - Copying your key to the server<a class="headerlink" href="#2-copying-your-key-to-the-server" title="Permanent link">&para;</a></h2>
-<p>Now you need to copy your new key to your server. You will need either a password-based SSH account or physical access to the machine for this step. Here are two ways of doing this :</p>
-<h3 id="using-ssh-copy-id">Using `ssh-copy-id``<a class="headerlink" href="#using-ssh-copy-id" title="Permanent link">&para;</a></h3>
-<p>If you have <code>ssh-copy-id</code> available on your system this step is easy, just run the following command :</p>
+<p>Now you need to copy your new key to your server. You will need either a password-based SSH account or physical access to the machine for this step. Here are two ways of doing this:</p>
+<h3 id="using-ssh-copy-id">Using <code>ssh-copy-id</code><a class="headerlink" href="#using-ssh-copy-id" title="Permanent link">&para;</a></h3>
+<p>If you have <code>ssh-copy-id</code> available on your system this step is easy, just run the following command:</p>
 <div class="codehilite"><pre><span></span>ssh-copy-id yourusername@yourserver
 </pre></div>
 
 
 <p><code>yourusername</code> should be a password-based SSH account on your server.</p>
+<h3 id="copying-the-key-manually">Copying the key manually<a class="headerlink" href="#copying-the-key-manually" title="Permanent link">&para;</a></h3>
+<p>You will need to copy the <code>id_rsa.pub</code> you have generated earlier to your server and add the contents to <code>~/.ssh/authorized_keys</code>.</p>
+<p>First, you need to check if the .ssh directory exists in your home directory. You can create it using the following command:</p>
+<div class="codehilite"><pre><span></span>mkdir -p ~/.ssh
+</pre></div>
+
+
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>The <code>mkdir -p</code> command is perfectly harmless if the directory already exists.</p>
+</div>
+<p>Then, you need to copy the contents of the id_rsa.pub file into a file called <code>authorized_keys</code>:</p>
+<div class="codehilite"><pre><span></span>cat id_rsa.pub &gt;&gt; ~/.ssh/authorized_keys
+</pre></div>
+
+
+<p>Finally, you need to make sure the permissions are right for these files:</p>
+<div class="codehilite"><pre><span></span>chmod -R <span class="nv">go</span><span class="o">=</span> ~/.ssh
+chown -R yourusername:yourusername ~/.ssh
+</pre></div>
+
+
+<p>The first command removes the permissions for anyone other than <code>yourusername</code> and the second command ensures that <code>yourusername</code> is the owner the the <code>.ssh</code> directory and all its contents. Make sure to substitute <code>yourusername</code> with the name of the actual account on your server.</p>
+<h2 id="3-testing-the-password-less-authentication">3 - Testing the password-less authentication<a class="headerlink" href="#3-testing-the-password-less-authentication" title="Permanent link">&para;</a></h2>
+<p>Now that everything is set-up, try to log on to your server using SSH:</p>
+<div class="codehilite"><pre><span></span>ssh yourusername@yourserver
+</pre></div>
+
+
+<p>If your server still asks for a password (other than the private key passphrase, if using) or if it refuses the connection, please verify that you have followed all the steps above.</p>
+<h2 id="4-disabling-password-based-authentication">4 - Disabling password-based authentication<a class="headerlink" href="#4-disabling-password-based-authentication" title="Permanent link">&para;</a></h2>
+<p>Once you have tested that you can log on using your key, you can increase your server security by disabling password-based authentication.</p>
+<div class="admonition danger">
+<p class="admonition-title">Danger</p>
+<p>Make sure that your key is working and that it is safely stored. Disabling password-based authentication will effectively lock you out of your server should you lose that key! Always make sure that you have a contingency plan!</p>
+</div>
+<p>Once you have tested and are able to login using only the key, you will have to edit the SSHd configuration to disable password authentication. On most linux servers, this will allow you to edit the config file:</p>
+<div class="codehilite"><pre><span></span>sudo nano /etc/ssh/sshd_config
+</pre></div>
+
+
+<p>If that file, find and uncomment (remove the <code>#</code>) the line that says:</p>
+<div class="codehilite"><pre><span></span>#PasswordAuthentication yes
+</pre></div>
+
+
+<p>and change it to:</p>
+<div class="codehilite"><pre><span></span>PasswordAuthentication no
+</pre></div>
+
+
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>While you are in that configuration file, you should change the default port for SSH. Look for the <code>Port 22</code> directive and change it to a port &gt; 1024 for increased security. Make sure that the chosen port is not occupied by another service and that it is enabled in your firewall.</p>
+</div>
+<p>Save the file and restart your server to enable the changes.</p>
+<h2 id="5-creating-an-alias-to-accelerate-the-connection">5 - Creating an alias to accelerate the connection<a class="headerlink" href="#5-creating-an-alias-to-accelerate-the-connection" title="Permanent link">&para;</a></h2>
+<p>Now that you can login using a key, why stop there? If you have change the port on your server, the command would now be something like:</p>
+<div class="codehilite"><pre><span></span>ssh -p <span class="m">2022</span> yourusername@yourserver.com
+</pre></div>
+
+
+<p>What if I told you that it could only be:</p>
+<div class="codehilite"><pre><span></span>ssh yourserver
+</pre></div>
+
+
+<p>Neat, no? All you need to do is create an alias. Here's how:</p>
                 
                   
                 
