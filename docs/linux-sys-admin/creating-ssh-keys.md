@@ -110,7 +110,7 @@ Save the file and restart your server to enable the changes.
 
 ## 5 - Creating an alias to accelerate the connection
 
-Now that you can login using a key, why stop there? If you have change the port on your server, the command would now be something like:
+Now that you can login using a key, why stop there? If you have changed the port on your server, the command would now be something like:
 
 ```bash
 ssh -p 2022 yourusername@yourserver.com
