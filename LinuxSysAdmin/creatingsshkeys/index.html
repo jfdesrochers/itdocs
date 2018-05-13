@@ -489,7 +489,20 @@ chown -R yourusername:yourusername ~/.ssh
 </pre></div>
 
 
-<p>Neat, no? All you need to do is create an alias. Here's how:</p>
+<p>Neat, no? All you need to do is create an alias. Here's how. On your machine, run the following command:</p>
+<div class="codehilite"><pre><span></span>nano ~/.ssh/config
+</pre></div>
+
+
+<p>In that file, type:</p>
+<div class="codehilite"><pre><span></span>Host yourserver
+    HostName yourserver.com
+    User yourusername
+    Port yourport
+</pre></div>
+
+
+<p><code>yourserver</code> after the <em>Host</em> directive is the name of the shortcut that your want. The <em>HostName</em> is the real domain name your your server. The <em>User</em> is the username you use to connect and the <em>Port</em> is the port you have set in step 4 (default is 22). Once you have saved the file, you should be able to connect using only <code>ssh yourserver</code>.</p>
                 
                   
                 
