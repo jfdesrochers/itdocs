@@ -422,6 +422,11 @@
 
 
 <p><code>yourusername</code> should be a password-based SSH account on your server.</p>
+<p>If you don't have the <code>ssh-copy-id</code> utility but have ssh access to your server, you can use this one-liner to copy your key (from <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys-on-ubuntu-1804">Digital Ocean</a>): </p>
+<div class="codehilite"><pre><span></span>cat ~/.ssh/id_rsa.pub <span class="p">|</span> ssh username@remote_host <span class="s2">&quot;mkdir -p ~/.ssh &amp;&amp; touch ~/.ssh/authorized_keys &amp;&amp; chmod -R go= ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys&quot;</span>
+</pre></div>
+
+
 <h3 id="copying-the-key-manually">Copying the key manually<a class="headerlink" href="#copying-the-key-manually" title="Permanent link">&para;</a></h3>
 <p>You will need to copy the <code>id_rsa.pub</code> you have generated earlier to your server and add the contents to <code>~/.ssh/authorized_keys</code>.</p>
 <p>First, you need to check if the .ssh directory exists in your home directory. You can create it using the following command:</p>
