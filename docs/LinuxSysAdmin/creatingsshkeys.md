@@ -116,5 +116,20 @@ What if I told you that it could only be:
 ssh yourserver
 ```
 
-Neat, no? All you need to do is create an alias. Here's how:
+Neat, no? All you need to do is create an alias. Here's how. On your machine, run the following command:
+
+```bash
+nano ~/.ssh/config
+```
+
+In that file, type:
+
+```bash
+Host yourserver
+    HostName yourserver.com
+    User yourusername
+    Port yourport
+```
+
+`yourserver` after the *Host* directive is the name of the shortcut that your want. The *HostName* is the real domain name your your server. The *User* is the username you use to connect and the *Port* is the port you have set in step 4 (default is 22). Once you have saved the file, you should be able to connect using only `ssh yourserver`.
 
