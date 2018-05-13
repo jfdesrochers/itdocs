@@ -9,6 +9,11 @@ site_url: 'https://jfdesrochers.github.io/itdocs'
 docs_dir: 'docs'
 site_dir: 'site'
 
+pages:
+- Welcome: 'index.md'
+- Linux Sys Admin:
+    - "Creating SSH keys and aliases": 'linux-sys-admin/creating-ssh-keys.md'
+
 # Copyright
 copyright: 'Copyright &copy; 2018 Jean-Francois Desrochers'
 

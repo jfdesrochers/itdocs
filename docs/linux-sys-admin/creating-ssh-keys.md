@@ -1,4 +1,4 @@
-# Creating and setting up a SSH key
+# Creating SSH keys and aliases
 
 ## 1 - Create a RSA key pair
 
