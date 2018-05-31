@@ -4,7 +4,7 @@
     
     <url>
      <loc>https://jfdesrochers.github.io/itdocs/</loc>
-     <lastmod>2018-05-13</lastmod>
+     <lastmod>2018-05-31</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -13,7 +13,17 @@
         
     <url>
      <loc>https://jfdesrochers.github.io/itdocs/linux-sys-admin/creating-ssh-keys/</loc>
-     <lastmod>2018-05-13</lastmod>
+     <lastmod>2018-05-31</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
+        
+    
+
+    
+        
+    <url>
+     <loc>https://jfdesrochers.github.io/itdocs/infrastructure/replace-hdd-p2000/</loc>
+     <lastmod>2018-05-31</lastmod>
      <changefreq>daily</changefreq>
     </url>
         

@@ -2,7 +2,7 @@
     "docs": [
         {
             "location": "/", 
-            "text": "Welcome\n\n\nWelcome to IT Docs by Jean-Francois Desrochers! You will find everything I've learned and documented over time down here. I hope you learn something!\n\n\nLinux Sys Admin\n\n\nCreating SSH keys and aliases", 
+            "text": "Welcome\n\n\nWelcome to IT Docs by Jean-Francois Desrochers! You will find everything I've learned and documented over time down here. I hope you learn something!\n\n\nLinux Sys Admin\n\n\nCreating SSH keys and aliases\n\n\nInfrastructure\n\n\nHow to replace/upgrade a drive in a HP MSA P2000", 
             "title": "Welcome"
         }, 
         {
@@ -14,6 +14,11 @@
             "location": "/#linux-sys-admin", 
             "text": "Creating SSH keys and aliases", 
             "title": "Linux Sys Admin"
+        }, 
+        {
+            "location": "/#infrastructure", 
+            "text": "How to replace/upgrade a drive in a HP MSA P2000", 
+            "title": "Infrastructure"
         }, 
         {
             "location": "/linux-sys-admin/creating-ssh-keys/", 
@@ -59,6 +64,26 @@
             "location": "/linux-sys-admin/creating-ssh-keys/#5-creating-an-alias-to-accelerate-the-connection", 
             "text": "Now that you can login using a key, why stop there? If you have changed the port on your server, the command would now be something like:  ssh -p  2022  yourusername@yourserver.com  What if I told you that it could only be:  ssh yourserver  Neat, no? All you need to do is create an alias. Here's how. On your machine, run the following command:  nano ~/.ssh/config  In that file, type:  Host yourserver\n    HostName yourserver.com\n    User yourusername\n    Port yourport  yourserver  after the  Host  directive is the name of the shortcut that your want. The  HostName  is the real domain name your your server. The  User  is the username you use to connect and the  Port  is the port you have set in step 4 (default is 22). Once you have saved the file, you should be able to connect using only  ssh yourserver .", 
             "title": "5 - Creating an alias to accelerate the connection"
+        }, 
+        {
+            "location": "/infrastructure/replace-hdd-p2000/", 
+            "text": "How to replace/upgrade a drive in a HP MSA P2000\n\n\nStep 1 - Replace the disk\n\n\nRemove the disk that needs replacing / upgrading and insert the new disk in your MSA. After a few seconds, the new drive should show up as available in the HP MSA Storage Management Utility:\n\n\n\n\nStep 2 - Re-Join the disk\n\n\nIn the Storage Management Utility, right-click the vdisk that contained the old disk and select Configuration \n Manage Dedicated Spares:\n\n\n\n\nThe newly added drive should show as 'available'. Check the box next to it and click 'Modify Spares':\n\n\n\n\nThe disk will still show up as spare, but the RAID array will reconstruct and it will show up an active member of the array when it's done. This will take a long time:", 
+            "title": "How to replace/upgrade a drive in a HP MSA P2000"
+        }, 
+        {
+            "location": "/infrastructure/replace-hdd-p2000/#how-to-replaceupgrade-a-drive-in-a-hp-msa-p2000", 
+            "text": "", 
+            "title": "How to replace/upgrade a drive in a HP MSA P2000"
+        }, 
+        {
+            "location": "/infrastructure/replace-hdd-p2000/#step-1-replace-the-disk", 
+            "text": "Remove the disk that needs replacing / upgrading and insert the new disk in your MSA. After a few seconds, the new drive should show up as available in the HP MSA Storage Management Utility:", 
+            "title": "Step 1 - Replace the disk"
+        }, 
+        {
+            "location": "/infrastructure/replace-hdd-p2000/#step-2-re-join-the-disk", 
+            "text": "In the Storage Management Utility, right-click the vdisk that contained the old disk and select Configuration   Manage Dedicated Spares:   The newly added drive should show as 'available'. Check the box next to it and click 'Modify Spares':   The disk will still show up as spare, but the RAID array will reconstruct and it will show up an active member of the array when it's done. This will take a long time:", 
+            "title": "Step 2 - Re-Join the disk"
         }
     ]
 }
