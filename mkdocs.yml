@@ -11,6 +11,8 @@ site_dir: 'site'
 
 pages:
 - Welcome: 'index.md'
+- Windows Sys Admin:
+    - "How to unlock an Active Directory object": 'windows-sys-admin/unlock-ad-object.md'
 - Linux Sys Admin:
     - "Creating SSH keys and aliases": 'linux-sys-admin/creating-ssh-keys.md'
 - Infrastructure:
