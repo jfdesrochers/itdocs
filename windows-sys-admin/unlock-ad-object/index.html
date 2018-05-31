@@ -13,6 +13,8 @@
         <meta name="description" content="IT Docs - Notes from my adventures in IT">
       
       
+        <link rel="canonical" href="https://jfdesrochers.github.io/itdocs/windows-sys-admin/unlock-ad-object/">
+      
       
         <meta name="author" content="Jean-Francois Desrochers">
       
@@ -35,20 +37,20 @@
       
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
-      <link rel="shortcut icon" href="/itdocs/assets/images/favicon.png">
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-0.17.3, mkdocs-material-2.7.3">
     
     
       
-        <title>IT Docs</title>
+        <title>How to unlock an Active Directory object - IT Docs</title>
       
     
     
-      <link rel="stylesheet" href="/itdocs/assets/stylesheets/application.8d40d89b.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.8d40d89b.css">
       
     
     
-      <script src="/itdocs/assets/javascripts/modernizr.1aa3b519.js"></script>
+      <script src="../../assets/javascripts/modernizr.1aa3b519.js"></script>
     
     
       <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
@@ -74,6 +76,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
     
+      <a href="#how-to-unlock-an-active-directory-object" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -96,7 +102,7 @@
                 IT Docs
               </span>
               <span class="md-header-nav__topic">
-                
+                How to unlock an Active Directory object
               </span>
             
           
@@ -167,7 +173,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/itdocs/" title="Welcome" class="md-nav__link">
+    <a href="../.." title="Welcome" class="md-nav__link">
       Welcome
     </a>
   </li>
@@ -177,10 +183,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
     
     <label class="md-nav__link" for="nav-2">
       Windows Sys Admin
@@ -196,11 +204,56 @@
           
           
 
+  
 
-  <li class="md-nav__item">
-    <a href="/itdocs/windows-sys-admin/unlock-ad-object/" title="How to unlock an Active Directory object" class="md-nav__link">
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="toc">
+        How to unlock an Active Directory object
+      </label>
+    
+    <a href="./" title="How to unlock an Active Directory object" class="md-nav__link md-nav__link--active">
       How to unlock an Active Directory object
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-enable-the-advanced-view" title="1 - Enable the Advanced view" class="md-nav__link">
+    1 - Enable the Advanced view
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-unlock-the-object" title="2 - Unlock the object" class="md-nav__link">
+    2 - Unlock the object
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
   </li>
 
         
@@ -234,7 +287,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/itdocs/linux-sys-admin/creating-ssh-keys/" title="Creating SSH keys and aliases" class="md-nav__link">
+    <a href="../../linux-sys-admin/creating-ssh-keys/" title="Creating SSH keys and aliases" class="md-nav__link">
       Creating SSH keys and aliases
     </a>
   </li>
@@ -270,7 +323,7 @@
 
 
   <li class="md-nav__item">
-    <a href="/itdocs/infrastructure/replace-hdd-p2000/" title="How to replace/upgrade a drive in a HP MSA P2000" class="md-nav__link">
+    <a href="../../infrastructure/replace-hdd-p2000/" title="How to replace/upgrade a drive in a HP MSA P2000" class="md-nav__link">
       How to replace/upgrade a drive in a HP MSA P2000
     </a>
   </li>
@@ -288,12 +341,62 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-enable-the-advanced-view" title="1 - Enable the Advanced view" class="md-nav__link">
+    1 - Enable the Advanced view
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-unlock-the-object" title="2 - Unlock the object" class="md-nav__link">
+    2 - Unlock the object
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
-  <h1>404 - Not found</h1>
-
+                
+                
+                <h1 id="how-to-unlock-an-active-directory-object">How to unlock an Active Directory object<a class="headerlink" href="#how-to-unlock-an-active-directory-object" title="Permanent link">&para;</a></h1>
+<p>Sometimes you want to move or delete an Active Directory object such as an Organizational Unit, but you get an Access Denied error. This is because the object is locked for modification. Here's how to unlock it.</p>
+<h2 id="1-enable-the-advanced-view">1 - Enable the Advanced view<a class="headerlink" href="#1-enable-the-advanced-view" title="Permanent link">&para;</a></h2>
+<p>Open Active Directory Users and Computers and select View / Advanced Features.</p>
+<h2 id="2-unlock-the-object">2 - Unlock the object<a class="headerlink" href="#2-unlock-the-object" title="Permanent link">&para;</a></h2>
+<p>Open the properties window for the object that you want to unlock, click the Object tab and uncheck 'Protect object from accidental deletion':</p>
+<p><img alt="" src="../unlock-ad-1.png" /></p>
+<p>You should now be able to move / delete / change the object. Just make sure to lock it again if it still exists to prevent accidental changes.</p>
+                
+                  
+                
+              
               
                 
 
@@ -306,6 +409,41 @@
       
         
 <footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../.." title="Welcome" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Welcome
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../linux-sys-admin/creating-ssh-keys/" title="Creating SSH keys and aliases" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Creating SSH keys and aliases
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
@@ -338,9 +476,9 @@
       
     </div>
     
-      <script src="/itdocs/assets/javascripts/application.b438e6c5.js"></script>
+      <script src="../../assets/javascripts/application.b438e6c5.js"></script>
       
-      <script>app.initialize({version:"0.17.3",url:{base:"/itdocs"}})</script>
+      <script>app.initialize({version:"0.17.3",url:{base:"../.."}})</script>
       
     
     
